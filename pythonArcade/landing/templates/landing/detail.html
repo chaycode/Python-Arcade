@@ -6,6 +6,12 @@
   </head>
   <body>
     <h1>{{game.name}}</h1>
-    <h3>{{game.upvotes}}</h3>
+    <h3>{{game.descriptions}}</h3>
+    <ul>
+      {% for poll in game.poll_set.all%}
+      <li> Good votes: {{poll.good}}</li>
+      <li> Bad votes: {{poll.bad}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
