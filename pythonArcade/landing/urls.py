@@ -10,6 +10,10 @@ urlpatterns = [
     #/413/favorite
     # url(r'^(?P<game_id>[0-9]+)/favorite/$', views.favorite, name='detail' ),
 
+    url(r'^(?P<game_id>[0-9]+)/vote/$', views.vote, name='vote'),
+
     #/413
-    url(r'^(?P<game_id>[0-9]+)$', views.detail, name='detail' )
+    url(r'^(?P<game_id>[0-9]+)$', views.detail, name='detail' ),
+
+    url(r'^(?P<game_id>[0-9]+)/result/$', views.result, name='result'),
 ]

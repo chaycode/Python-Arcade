@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Python Arcade</title>
+  </head>
+  <body>
+    <h1>{{ game.name }}</h1>
+<ul>
+  {% for poll in game.poll_set.all %}
+  <li>{{ poll.choice_text }} -- {{ poll.votes }} vote{{ poll.votes|pluralize }} </li>
+  {% endfor %}
+</ul>
+
+  </body>
+</html>
