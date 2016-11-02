@@ -1,15 +1,10 @@
-from django.http import Http404
-from django.http import HttpResponse
-from django.shortcuts import render
-from .models import Game
+from django.shortcuts import render, get_object_or_404
+from .models import Game, Poll
 
 def index(request):
     all_games = Game.objects.all()
     return render(request, 'landing/index.html', {'all_games': all_games})
 
 def detail(request, game_id):
-    try:
-        game = Game.objects.get(pk=game_id)
-    except Game.DoesNotExist:
-        raise Http404('Game does not exist!')
+    game = get_object_or_404(Game, pk=game_id)
     return render(request, 'landing/detail.html', {'game': game})

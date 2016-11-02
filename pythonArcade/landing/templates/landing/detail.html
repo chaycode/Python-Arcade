@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Python Arcade</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>{{game.name}}</h1>
     <h3>{{game.descriptions}}</h3>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+  <form action="{% url 'polls:vote' question.id %}" method="post">
+    {% csrf_token %}
+    {% for choice in question.choice_set.all %}
+    <input type='radio' name='choice' id='choice{{ forloop.counter }}' value="{{ choice.id }}" />
+
+    <label for='choice {{ forloop.counter }}'>{{ choice.choice_text}}</lable><br />
+      {% endfor %}
+      <input type='submit' value='Vote' />
+    </form>
     <ul>
-      {% for poll in game.poll_set.all%}
-      <li> Good votes: {{poll.good}}</li>
-      <li> Bad votes: {{poll.bad}}</li>
+      {%for poll in game.poll_set.all %}
+      <li>{{poll.choice_text }}
+      <br>
+      Number of Votes: {{poll.votes}}
+      <br>
+      <br>
+      </li>
       {% endfor %}
     </ul>
-  </body>
+</body>
+
 </html>
