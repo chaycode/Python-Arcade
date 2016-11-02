@@ -1,7 +1,9 @@
 #bar{
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 10vh;
 }
 .turd{
+  font-family: 'Roboto', sans-serif;
   display: block;
   margin: auto;
   background: url('assets/flappy/flappy_turd.png');
@@ -9,16 +11,33 @@
   height: 240px;
 }
 .game_name{
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
   /*margin-left: 2vw;*/
 }
 
+#button{
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10vw;
+  border-radius: 10px;
+}
+
+.vote{
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 5vh;
+}
 #descript{
+  font-family: 'Roboto', sans-serif;
   margin-top: 5vh;
   text-align: center;
 }
 #box{
+  font-family: 'Roboto', sans-serif;
   border-radius: 25px;
   border: black;
   display: block;
@@ -28,6 +47,20 @@
   margin-top: 40vh
   margin-bottom: 40vh;
 }
-.main{
 
+.box{
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  margin: auto;
+  width: 500px;
+}
+
+#vote_button{
+  margin-top: -5vh;
+  margin-bottom: 5vh;
+}
+
+form{
+  font-family: 'Roboto', sans-serif;
+  margin-left: 10vw;
 }

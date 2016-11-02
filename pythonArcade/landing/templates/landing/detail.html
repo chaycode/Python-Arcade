@@ -1,25 +1,53 @@
-<!DOCTYPE html>
+<!DOCTYPE html> {%load staticfiles%}
+
 <html>
+
 
 <head>
     <meta charset="utf-8">
     <title>Python Arcade</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'landing/style.css' %}">
+
 </head>
 
 <body>
-    <h1>{{game.name}}</h1>
-    <h3>{{game.descriptions}}</h3>
-    <h2><a href='{{game.link}}'>Play game</a></h2>
-    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-  <form action="{% url 'landing:vote' game.id %}" method="post">
-    {% csrf_token %}
-    {% for poll in game.poll_set.all %}
-    <input type='radio' name='choice' id='choice{{ forloop.counter }}' value="{{ poll.id }}" />
-    <label for='choice {{ forloop.counter }}'>{{ poll.choice_text}}</lable><br/>
+    <nav id='bar' class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Python Arcade</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            </div>
+        </div>
+    </nav>
+    <div class='box'>
+        <h1 class='game_name'>{{game.name}}</h1>
+        <h3 id='descript'>{{game.descriptions}}</h3>
+        <div class={{game.pic}}></div>
+        <a id='button' href="{{game.link}}" class="btn btn-primary btn-lg">Play Game</a> {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>{% endif %}
+    </div>
+
+    <form class="form-horizontal" action="{% url 'landing:vote' game.id %}" method="post">
+        <fieldset>
+          <div class="form-group">
+            <div class="col-lg-10">
+            <legend>What do you think about this game?</legend>
+            {% csrf_token %} {% for poll in game.poll_set.all %}
+                    <div class='vote'>
+                        <input class='vote' type='radio' name='choice' id='choice{{ forloop.counter }}' value="{{ poll.id }}">
+                        <label for='choice {{ forloop.counter }}'>{{ poll.choice_text}}</lable>
+                    </div>
       {% endfor %}
-      <input type='submit' value='Vote' />
+    </div>
+  </div>
+       <button id='vote_button' type="submit" class="btn btn-default">vote</button>
+  </fieldset>
     </form>
+
+
 
 
 </body>
