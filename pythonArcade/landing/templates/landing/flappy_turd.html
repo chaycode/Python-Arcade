@@ -7,16 +7,55 @@
 
     <meta charset="utf-8">
     <title>Flappy Turd</title>
-    <link rel ="stylesheet" type="text/css" href="{% static 'landing/assets' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Irish+Grover" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script type="text/javascript" src= {% static "landing/js/flappy/phaser.js" %}></script>
-    <script type="text/javascript" src= {% static "landing/js/flappy/main.js" %}></script>
 
 </head>
 
 <body>
 
+<style>
+
+  body {
+    background-color: #8b4513;
+  }
+
+  canvas {
+    border: 5px solid black;
+    margin-left: 45%;
+    margin-top: 3%;
+  }
+</style>
+
+<div class="container" style="margin-left:15%">
+
+  <div style="position: fixed; font-family:'Irish Grover', cursive; color:#bc9055" class="col-md-3">
+    <h1>Flappy Turd</h1>
+    <h2>Directions:</h2>
+    <h3>Press the SPACEBAR to elevate Flappy Turd.</h3>
+    <h3>Avoid obstacles and earn points!</h3>
+
+    <div style="margin-left: -50px">
+      <img src="http://3.bp.blogspot.com/-vBPM9D-Q6QE/VQMqx2noDKI/AAAAAAAAIlY/-JRuvT-ILnM/s1600/a.png">
+    </div>
+
+  </div>
 
 
+  <!-- <div>
+    <h2 style="position: fixed; font-family:'Irish Grover', cursive"> Directions</h2>
+  </div> -->
+
+</div>
+
+
+
+
+
+<script type="text/javascript" src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src= {% static "landing/js/flappy/main.js" %}></script>
 </body>
 
 </html>
