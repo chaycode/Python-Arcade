@@ -16,4 +16,7 @@ urlpatterns = [
     url(r'^(?P<game_id>[0-9]+)$', views.detail, name='detail' ),
 
     url(r'^(?P<game_id>[0-9]+)/result/$', views.result, name='result'),
+
+    url(r'^play_turd/$', views.flappy_turd, name='flappy')
+
 ]
