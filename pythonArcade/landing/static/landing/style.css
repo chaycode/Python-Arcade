@@ -10,6 +10,14 @@
   width: 242px;
   height: 240px;
 }
+.space{
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  margin: auto;
+  background: url('assets/flappy/space.png');
+  width: 242px;
+  height: 240px;
+}
 .game_name{
   font-family: 'Roboto', sans-serif;
   display: flex;
