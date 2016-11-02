@@ -10,6 +10,9 @@ def index(request):
 def flappy_turd(request):
     return render(request, 'landing/flappy_turd.html')
 
+def spacegame(request):
+    return render(request, 'landing/spacegame.html')
+
 def detail(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
     return render(request, 'landing/detail.html', {'game': game})
