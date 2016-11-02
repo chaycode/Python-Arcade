@@ -1,15 +1,21 @@
 <!DOCTYPE html>
+{%load staticfiles%}
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">
+    <link rel ="stylesheet" type="text/css" href="{% static 'landing/style.css' %}">
     <title>Python Arcade</title>
   </head>
   <body>
-    <h1> Python Arcade</h1>
+
+    <h1 class='heading'> Python Arcade</h1>
     {% if all_games %}
     <ul>
       {% for game in all_games %}
-      <li><a href="{% url 'landing:detail' game.id %}">{{ game.name }}</li>
+      <li><a href="{% url 'landing:detail' game.id %}"><h1>{{ game.name }}</h1></a>{{ game.descriptions }}</li>
+      <div class='pic'>
+      </div>
       {% endfor %}
     </ul>
     {% else %}

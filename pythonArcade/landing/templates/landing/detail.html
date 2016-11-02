@@ -9,6 +9,7 @@
 <body>
     <h1>{{game.name}}</h1>
     <h3>{{game.descriptions}}</h3>
+    <h2><a href='{{game.link}}'>Play game</a></h2>
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
   <form action="{% url 'landing:vote' game.id %}" method="post">
@@ -20,17 +21,7 @@
       <input type='submit' value='Vote' />
     </form>
 
-<!--
-    <ul>
-      {%for poll in game.poll_set.all %}
-      <li>{{poll.choice_text }}
-      <br>
-      Number of Votes: {{poll.votes}}
-      <br>
-      <br>
-      </li>
-      {% endfor %}
-    </ul> -->
+
 </body>
 
 </html>

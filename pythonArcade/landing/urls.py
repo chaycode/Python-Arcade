@@ -17,6 +17,6 @@ urlpatterns = [
 
     url(r'^(?P<game_id>[0-9]+)/result/$', views.result, name='result'),
 
-    url(r'^play/$', views.flappy_turd, name='flappy')
+    url(r'^play_turd/$', views.flappy_turd, name='flappy')
 
 ]
