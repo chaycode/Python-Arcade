@@ -1,0 +1,27 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fanny Dritz VS The Homeless</title>
+    <script src= {% static "landing/js/flappy/phaser.js" %}></script>
+    <script src= {% static "landing/js/fannydritz/boot.js" %}></script>
+    <script src= {% static "landing/js/fannydritz/Preloader.js" %}></script>
+    <script src= {% static "landing/js/fannydritz/Level.js" %}></script>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var game = new Phaser.Game(500, 400, Phaser.AUTO, '');
+            game.state.add('Boot', Game.Boot);
+            game.state.add('Preloader', Game.Preloader);
+            game.state.add('Level', Game.Level);
+            game.state.add('GameOver', Game.GameOver);
+            game.state.start('Boot');
+          }
+    </script>
+  </body>
+</html>

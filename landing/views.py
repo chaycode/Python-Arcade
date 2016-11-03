@@ -13,6 +13,9 @@ def flappy_turd(request):
 def spacegame(request):
     return render(request, 'landing/spacegame.html')
 
+def fannydritz(request):
+    return render(request, 'landing/fannydritz.html')
+
 def detail(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
     return render(request, 'landing/detail.html', {'game': game})
