@@ -11,25 +11,27 @@
 
 <body>
 
-  <nav id='bar' class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Python Arcade</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-    </div>
-  </div>
-</nav>
+    <nav id='bar' class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Python Arcade</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            </div>
+        </div>
+    </nav>
 
     <div class='main'>
 
         {% if all_games %}
-        <div id='box' class="well">
+
             {% for game in all_games %}
+            <div id='box' class="well">
             <a href="{% url 'landing:detail' game.id %}">
                 <h1 class='game_name'>{{ game.name }}</h1>
-            <div class={{game.pic}}>
-            </div></a>
+                <div class={{game.pic}}>
+                </div>
+            </a>
             <h4 id='descript'>{{ game.descriptions }} </h4>
         </div>
 
