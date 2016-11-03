@@ -1,1 +1,1 @@
-web: gunicorn pythonArcade.wsgi
+web: gunicorn pythonArcade/pythonArcade.wsgi
