@@ -89,3 +89,7 @@ ENV/
 # Rope project settings
 .ropeproject
 Contact GitHub API Training Shop Blog About
+venv
+*.pyc
+staticfiles
+.env
