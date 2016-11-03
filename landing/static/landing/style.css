@@ -18,6 +18,15 @@
   width: 242px;
   height: 240px;
 }
+
+.fanny{
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  margin: auto;
+  background: url('assets/flappy/fanny.png');
+  width: 242px;
+  height: 240px;
+}
 .game_name{
   font-family: 'Roboto', sans-serif;
   display: flex;
