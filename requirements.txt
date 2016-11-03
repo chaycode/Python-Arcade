@@ -1,2 +1,4 @@
 Django==1.10.3
 gunicorn==19.6.0
+[33mYou are using pip version 8.1.2, however version 9.0.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.[0m
