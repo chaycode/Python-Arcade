@@ -9,8 +9,37 @@
     <script src= {% static "landing/js/fannydritz/boot.js" %}></script>
     <script src= {% static "landing/js/fannydritz/Preloader.js" %}></script>
     <script src= {% static "landing/js/fannydritz/Level.js" %}></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Irish+Grover" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
   </head>
   <body>
+    <style>
+    body {
+      background-color: teal;
+    }
+    canvas {
+      border: 5px solid black;
+      margin-left: 41%;
+      margin-top: 8%;
+    }
+    </style>
+
+    <div class="container" style="margin-left:5%">
+
+      <div style="position: fixed; font-family:'Irish Grover', cursive; color:#ffffff; margin-top:5%" class="col-md-4">
+        <h1>Fanny Dritz VS. The Homeless</h1>
+        <h2>Directions:</h2>
+        <h3>Press A,S, & W to make Fanny move! Press SPACEBAR to launch a bird at foes!</h3>
+        <h3>Avoid water, pits, and homeless combatants, as you make your through Commons Park to G-School!</h3>
+      </div>
+
+
+
+
+
+
 
 
     <script type="text/javascript">
@@ -23,5 +52,6 @@
             game.state.start('Boot');
           }
     </script>
+    <script type="text/javascript" src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
 </html>

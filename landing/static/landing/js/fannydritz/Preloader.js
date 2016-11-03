@@ -17,7 +17,6 @@ Game.Preloader.prototype = {
         this.load.image('selfie', '/static/landing/assets/fannydritz/assets/selfie.png');
         this.load.spritesheet('player', '/static/landing/assets/fannydritz/assets/Fanny_Dritz_64.png', 64, 64);
         this.load.spritesheet('bird', '/static/landing/assets/fannydritz/assets/sillyBird.png', 32, 32)
-        this.load.spritesheet('guineaPig', '/static/landing/assets/fannydritz/assets/guinea.png', 80, 56);
         this.load.spritesheet('homelessA', '/static/landing/assets/fannydritz/assets/homelessA.png', 64, 64);
         this.load.spritesheet('homelessB', '/static/landing/assets/fannydritz/assets/homelessB.png', 64, 64);
 
