@@ -14,3 +14,4 @@ PyMySQL==0.7.9
 SQLAlchemy==1.1.2
 virtualenv==15.0.3
 Werkzeug==0.11.11
+whitenoise==3.2.2
