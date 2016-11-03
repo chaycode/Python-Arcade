@@ -19,7 +19,9 @@ urlpatterns = [
 
     url(r'^play_turd/$', views.flappy_turd, name='flappy'),
 
-    url(r'^spacegame/$', views.spacegame, name='spacegame')
+    url(r'^spacegame/$', views.spacegame, name='spacegame'),
+
+    url(r'^fannydritz/$', views.fannydritz, name='fannydritz')
 
 
 ]
