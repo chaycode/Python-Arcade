@@ -1,1 +1,1 @@
-web: gunicorn pythonArcade:app 
+web: python -m pythonArcade/manage.py runserver
