@@ -1,1 +1,1 @@
-web: python -m pythonArcade/manage.py runserver
+web: python manage.py runserver
