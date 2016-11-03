@@ -1,1 +1,1 @@
-web: python pythonArcade/manage.py runserver
+web: gunicorn pythonArcade.wsgi
