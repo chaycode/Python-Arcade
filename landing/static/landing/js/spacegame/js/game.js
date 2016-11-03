@@ -10,7 +10,6 @@ var livesText;
 var enemySpawnSpeed1 = 5550;
 var enemySpawnSpeed2 = 1300;
 
-
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {
   preload: preload,
   create: create,
@@ -18,13 +17,11 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {
 });
 
 function preload(){
-  // game.load.image('bottom', 'js/platform.png')
-  game.load.image('line', '/static/landing/js/spacegame/js/linepiece.png')
-  game.load.image('bullet', '/static/landing/js/spacegame/js/missle.png');
-  game.load.image('ufo', '/static/landing/js/spacegame/js/ufo.png');
-  game.load.image('ufo_bullet', '/static/landing/js/spacegame/js/ufo_missle.png');
-  game.load.image('ship', '/static/landing/js/spacegame/js/ship.png');
-  game.load.image('city', '/static/landing/js/spacegame/js/cityscape.jpg')
+  game.load.image('bullet', 'js/missle.png');
+  game.load.image('ufo', 'js/ufo.png');
+  game.load.image('ufo_bullet', 'js/ufo_missle.png');
+  game.load.image('ship', 'js/ship.png');
+  game.load.image('city', 'js/cityscape.jpg')
 }
 
 function create(){
@@ -75,10 +72,6 @@ function playerKill (player, enemies) {
   livesText.text = 'Lives: ' + lives;
 }
 
-function bulletKill (enemy, bullet) {
-  bullet.kill();
-}
-
 function fire() {
   if (game.time.now > nextFire && bullets.countDead() > 0)
   {
@@ -89,10 +82,18 @@ function fire() {
   }
 }
 
+// function spawnRate(){
+//   if (score > 10 && score > 20 && score > 50 && score > 80 && score > 100)
+//   {
+//     enemySpawnSpeed1 -= 1000;
+//   }
+// }
+
 function createEnemy() {
   enemy = enemies.create(1000, game.world.randomY, 'ufo')
   enemy.body.velocity.x = -150;
-  game.time.events.add(game.rnd.integerInRange(enemySpawnSpeed1, enemySpawnSpeed2), createEnemy);
+  // game.time.events.add(game.rnd.integerInRange(enemySpawnSpeed1, enemySpawnSpeed2), createEnemy);
+  game.time.events.add(enemySpawnSpeed1, createEnemy);
 }
 
 function enemyFire() {
@@ -107,6 +108,10 @@ function enemyFire() {
   }
 }
 
+function bulletKill (bullet, enemies) {
+  bullet.kill();
+}
+
 function update() {
   city.tilePosition.x -= 2;
 
@@ -114,11 +119,10 @@ function update() {
   shoot = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
   game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
 
-
-  game.physics.arcade.overlap(bullets, enemies, enemyKill, null, this);
+  game.physics.arcade.overlap(bullets, enemies, bulletKill, enemyKill, this);
+  // game.physics.arcade.overlap(bullets, enemies, bulletKill, null, this);
   game.physics.arcade.overlap(player, enemies, playerKill, null, this);
   game.physics.arcade.overlap(player, enemyBullets, playerKill, null, this);
-  game.physics.arcade.overlap(enemies, bullets, bulletKill, null, this);
 
   if (cursors.left.isDown)
   {
@@ -146,15 +150,10 @@ function update() {
   }
   else if (player.alive === false && lives > 0)
   {
-    player = game.add.sprite(32, game.world.height / 2, 'ship')
+    player = game.add.sprite(32, game.world.height / 2, 'ship');
     game.physics.arcade.enable(player);
     player.body.collideWorldBounds = true;
   }
-  // else if (score % 50 === 0)
-  // {
-  //   enemySpawnSpeed1 -= 10;
-  //   enemySpawnSpeed2 -= 5;
-  // }
   else {
     player.body.velocity.x = 50;
   }
