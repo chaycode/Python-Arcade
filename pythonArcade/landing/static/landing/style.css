@@ -72,3 +72,8 @@ form{
   font-family: 'Roboto', sans-serif;
   margin-left: 10vw;
 }
+
+#myChart{
+  height: 200px;
+  width: 200px;
+}

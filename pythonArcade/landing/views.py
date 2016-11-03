@@ -21,6 +21,7 @@ def result(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
     return render(request, 'landing/result.html', {'game': game})
 
+
 def vote(request, game_id):
     game = get_object_or_404(Game, pk=game_id)
     try:
