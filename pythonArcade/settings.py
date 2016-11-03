@@ -25,19 +25,20 @@ SECRET_KEY = ')7et(hnwq#zq)ysr^)22l3feb2%!$kg32hvrhtp8v=69ae$i4^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'landing.apps.LandingConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'landing.apps.LandingConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -117,5 +118,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+# STATIC_ROOT = os.path.join('pythonArcade/landing', 'staticfiles')
+STATIC_ROOT = 'Python-Arcade/pythonArcade/landing/static'
 STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+# STATICFILES_DIRS = (
+#     os.path.join('pythonArcade/landing', 'static'),
+# )
