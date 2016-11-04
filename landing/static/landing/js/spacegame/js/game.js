@@ -17,11 +17,11 @@ var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {
 });
 
 function preload(){
-  game.load.image('bullet', 'js/missle.png');
-  game.load.image('ufo', 'js/ufo.png');
-  game.load.image('ufo_bullet', 'js/ufo_missle.png');
-  game.load.image('ship', 'js/ship.png');
-  game.load.image('city', 'js/cityscape.jpg')
+  game.load.image('bullet', '/static/landing/js/spacegame/js/missle.png');
+  game.load.image('ufo', '/static/landing/js/spacegame/js/ufo.png');
+  game.load.image('ufo_bullet', '/static/landing/js/spacegame/js/ufo_missle.png');
+  game.load.image('ship', '/static/landing/js/spacegame/js/ship.png');
+  game.load.image('city', '/static/landing/js/spacegame/js/cityscape.jpg')
 }
 
 function create(){

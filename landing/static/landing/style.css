@@ -86,3 +86,15 @@ form{
   height: 200px;
   width: 200px;
 }
+
+.result_vote{
+  text-align: center;
+  font-size: 25px;
+  margin: auto;
+  width: 40vw;
+  margin-top: 10vh;
+}
+
+li{
+  list-style: none;
+}
